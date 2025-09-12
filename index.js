@@ -3,7 +3,9 @@ import morgan from 'morgan';
 import cors from 'cors';
 
 const app = express();
-const port = 3000;
+const port = 3000
+
+app.use(express.static('dist'));
 
 let notes = [
   {
@@ -104,5 +106,5 @@ const unknownEndpoint = (req, res) => {
 app.use(unknownEndpoint)
 
 app.listen(port, () => {
-  console.log(`Server running on port ${port}/`);
+  console.log(`Server running`);
 });
